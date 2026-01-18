@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тестовая страница №2 (Сложная верстка)</title>
+    <style>
+        body { font-family: sans-serif; background: #2c2c2c; color: #f1f1f1; padding: 2em; }
+        .survey-form { max-width: 700px; margin: auto; background: #383838; padding: 2em; border-radius: 10px; }
+        .form-item { border-bottom: 1px solid #555; padding: 1.5em 0.5em; }
+        .form-item:last-child { border-bottom: none; }
+        .item-label { font-size: 1.1em; margin-bottom: 1em; display: block; }
+        .item-input-area { padding-left: 1em; }
+        .item-input-area input[type="text"] { width: 90%; padding: 8px; border-radius: 4px; border: 1px solid #666; background: #444; color: #fff; }
+        .radio-option { margin-bottom: 0.5em; }
+    </style>
+</head>
+<body>
+
+    <h1>Тест с нестандартной версткой</h1>
+    <p>Эта страница специально сделана без очевидных классов-контейнеров для проверки нового эвристического движка.</p>
+
+    <main class="survey-form">
+        
+        <section class="form-item user-data-section">
+            <label class="item-label" for="user-name">1. Пожалуйста, введите ваше полное имя:</label>
+            <div class="item-input-area">
+                <input type="text" id="user-name" name="fullname">
+            </div>
+        </section>
+
+        <section class="form-item choice-section">
+            <span class="item-label">2. Какой ваш любимый язык программирования?</span>
+            <div class="item-input-area">
+                <div class="radio-option">
+                    <input type="radio" id="lang-js" name="fav_language" value="JavaScript">
+                    <label for="lang-js">JavaScript</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="lang-py" name="fav_language" value="Python">
+                    <label for="lang-py">Python</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="lang-go" name="fav_language" value="Go">
+                    <label for="lang-go">Go</label>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-item text-input-section">
+            <span class="item-label">3. Укажите столицу Франции:</span>
+            <div class="item-input-area">
+                 <input type="text" id="capital-fr" name="capital_france">
+            </div>
+        </section>
+
+        <section class="form-item satisfaction-poll">
+            <label class="item-label">4. Насколько вы удовлетворены этим тестом?</label>
+            <div class="item-input-area">
+                <select name="satisfaction">
+                    <option value="">Выберите вариант...</option>
+                    <option value="5">Очень удовлетворен</option>
+                    <option value="4">Удовлетворен</option>
+                    <option value="3">Нейтрально</option>
+                </select>
+            </div>
+        </section>
+        
+    </main>
+
+</body>
+</html>

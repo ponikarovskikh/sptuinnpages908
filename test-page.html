@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полигон для тестирования Surepass v2</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+        :root {
+            --bg-color: #f4f5f7;
+            --surface-color: #ffffff;
+            --border-color: #e2e8f0;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --accent-purple: #6b46c1;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 2rem;
+        }
+        .main-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .main-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .main-header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .main-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+        .language-card {
+            background: var(--surface-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+        }
+        .language-card-header {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            margin-top: 0;
+            font-weight: 500;
+        }
+        .quiz-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .language-card .quiz-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .question-label {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+        .options-group .option, .radio-option, .checkbox-option {
+            display: block;
+            margin-bottom: 0.8rem;
+            cursor: pointer;
+            padding: 10px 12px;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+            border: 1px solid transparent;
+        }
+        .options-group .option:hover, .radio-option:hover, .checkbox-option:hover {
+            background-color: #f7fafc;
+            border-color: #edf2f7;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+            accent-color: var(--accent-purple);
+        }
+        input[type="text"], input[type="email"], textarea, select {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            background-color: #fdfdff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+         input[type="text"]:focus, input[type="email"]:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.2);
+        }
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <header class="main-header">
+            <h1>Surepass Test Arena v2.0</h1>
+            <p>A completely redesigned test environment for our analysis engine.</p>
+        </header>
+
+        <!-- Russian Section -->
+        <section class="language-card">
+            <h2 class="language-card-header">🇷🇺 Русский</h2>
+            <div class="quiz-item">
+                <label class="question-label">1. Кто написал роман "Война и мир"?</label>
+                <div class="options-group">
+                    <label class="radio-option"><input type="radio" name="ru_q1" value="a"> Фёдор Достоевский</label>
+                    <label class="radio-option"><input type="radio" name="ru_q1" value="b"> Лев Толстой</label>
+                    <label class="radio-option"><input type="radio" name="ru_q1" value="c"> Александр Пушкин</label>
+                </div>
+            </div>
+            <div class="quiz-item">
+                <label class="question-label">2. Какие из этих городов являются столицами государств?</label>
+                <div class="options-group">
+                    <label class="checkbox-option"><input type="checkbox" name="ru_q2" value="a"> Париж</label>
+                    <label class="checkbox-option"><input type="checkbox" name="ru_q2" value="b"> Нью-Йорк</label>
+                    <label class="checkbox-option"><input type="checkbox" name="ru_q2" value="c"> Берлин</label>
+                    <label class="checkbox-option"><input type="checkbox" name="ru_q2" value="d"> Сидней</label>
+                </div>
+            </div>
+            <div class="quiz-item">
+                <label for="ru_q3" class="question-label">3. Опишите своими словами основной принцип работы протокола HTTP.</label>
+                <textarea id="ru_q3" name="ru_q3" placeholder="Начните ваш ответ здесь..."></textarea>
+            </div>
+        </section>
+
+        <!-- English Section -->
+        <section class="language-card">
+            <h2 class="language-card-header">🇬🇧 English</h2>
+            <div class="quiz-item">
+                <label for="en_q1" class="question-label">1. What is the chemical symbol for Gold?</label>
+                <input type="text" id="en_q1" name="en_q1" placeholder="Enter chemical symbol">
+            </div>
+            <div class="quiz-item">
+                <label class="question-label">2. Which of the following are planets in our solar system?</label>
+                <div class="options-group">
+                    <label class="checkbox-option"><input type="checkbox" name="en_q2" value="a"> Mars</label>
+                    <label class="checkbox-option"><input type="checkbox" name="en_q2" value="b"> Andromeda</label>
+                    <label class="checkbox-option"><input type="checkbox" name="en_q2" value="c"> Jupiter</label>
+                    <label class="checkbox-option"><input type="checkbox" name="en_q2" value="d"> Orion</label>
+                </div>
+            </div>
+            <div class="quiz-item">
+                <label for="en_q3" class="question-label">3. Choose the correct chemical formula for water.</label>
+                <select id="en_q3" name="en_q3">
+                    <option value="">Select an option</option>
+                    <option value="a">CO₂</option>
+                    <option value="b">O₂</option>
+                    <option value="c">H₂O</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Spanish Section -->
+         <section class="language-card">
+            <h2 class="language-card-header">🇪🇸 Español</h2>
+            <div class="quiz-item">
+                <label class="question-label">1. ¿Cuál es el río más largo del mundo?</label>
+                <div class="options-group">
+                    <label class="radio-option"><input type="radio" name="es_q1" value="a"> Río Nilo</label>
+                    <label class="radio-option"><input type="radio" name="es_q1" value="b"> Río Misisipi</label>
+                    <label class="radio-option"><input type="radio" name="es_q1" value="c"> Río Amazonas</label>
+                </div>
+            </div>
+            <div class="quiz-item">
+                <label for="es_q2" class="question-label">2. ¿Quién es el autor de "Don Quijote de la Mancha"?</label>
+                 <input type="text" id="es_q2" name="es_q2" placeholder="Escriba el nombre del autor">
+            </div>
+            <div class="quiz-item">
+                <label for="es_q3" class="question-label">3. Describe brevemente qué es la paella.</label>
+                <textarea id="es_q3" name="es_q3" placeholder="Su descripción..."></textarea>
+            </div>
+        </section>
+
+        <!-- German Section -->
+        <section class="language-card">
+            <h2 class="language-card-header">🇩🇪 Deutsch</h2>
+            <div class="quiz-item">
+                <label for="de_q1" class="question-label">1. In welchem Jahr fiel die Berliner Mauer?</label>
+                <input type="text" id="de_q1" name="de_q1" placeholder="Ihre Antwort">
+            </div>
+            <div class="quiz-item">
+                <label class="question-label">2. Welche dieser Automarken sind deutsch?</label>
+                <div class="options-group">
+                    <label class="checkbox-option"><input type="checkbox" name="de_q2" value="a"> BMW</label>
+                    <label class="checkbox-option"><input type="checkbox" name="de_q2" value="b"> Toyota</label>
+                    <label class="checkbox-option"><input type="checkbox" name="de_q2" value="c"> Mercedes-Benz</label>
+                    <label class="checkbox-option"><input type="checkbox" name="de_q2" value="d"> Ford</label>
+                </div>
+            </div>
+            <div class="quiz-item">
+                <label for="de_q3" class="question-label">3. Was ist die Hauptstadt von Bayern?</label>
+                <select id="de_q3" name="de_q3">
+                    <option value="">Wählen Sie eine Stadt</option>
+                    <option value="a">Berlin</option>
+                    <option value="b">Hamburg</option>
+                    <option value="c">München</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- French Section -->
+        <section class="language-card">
+            <h2 class="language-card-header">🇫🇷 Français</h2>
+            <div class="quiz-item">
+                <label for="fr_q1" class="question-label">1. Où se trouve la Tour Eiffel ?</label>
+                <input type="text" id="fr_q1" name="fr_q1" placeholder="Entrez la ville">
+            </div>
+            <div class="quiz-item">
+                <label class="question-label">2. Qui a peint la "Nuit étoilée"?</label>
+                <div class="options-group">
+                    <label class="radio-option"><input type="radio" name="fr_q2" value="a"> Claude Monet</label>
+                    <label class="radio-option"><input type="radio" name="fr_q2" value="b"> Vincent van Gogh</label>
+                    <label class="radio-option"><input type="radio" name="fr_q2" value="c"> Pablo Picasso</label>
+                </div>
+            </div>
+            <div class="quiz-item">
+                <label for="fr_q3" class="question-label">3. Décrivez brièvement ce qu'est un croissant.</label>
+                <textarea id="fr_q3" name="fr_q3" placeholder="Votre description..."></textarea>
+            </div>
+        </section>
+        
+        <!-- Italian Section -->
+        <section class="language-card">
+            <h2 class="language-card-header">🇮🇹 Italiano</h2>
+            <div class="quiz-item">
+                <label class="question-label">1. In quale città è famosa per i suoi canali?</label>
+                <div class="options-group">
+                    <label class="radio-option"><input type="radio" name="it_q1" value="a"> Roma</label>
+                    <label class="radio-option"><input type="radio" name="it_q1" value="b"> Firenze</label>
+                    <label class="radio-option"><input type="radio" name="it_q1" value="c"> Venezia</label>
+                </div>
+            </div>
+             <div class="quiz-item">
+                <label for="it_q2" class="question-label">2. Chi ha scolpito la statua del "David"?</label>
+                <input type="text" id="it_q2" name="it_q2" placeholder="Nome dell'artista">
+            </div>
+             <div class="quiz-item">
+                <label class="question-label">3. Quali ingredienti sono tipici della pizza Margherita?</label>
+                <div class="options-group">
+                    <label class="checkbox-option"><input type="checkbox" name="it_q3" value="a"> Pomodoro</label>
+                    <label class="checkbox-option"><input type="checkbox" name="it_q3" value="b"> Mozzarella</label>
+                    <label class="checkbox-option"><input type="checkbox" name="it_q3" value="c"> Ananas</label>
+                    <label class="checkbox-option"><input type="checkbox" name="it_q3" value="d"> Basilico</label>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+</body>
+</html>
+
+    
